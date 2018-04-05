@@ -1,0 +1,64 @@
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: #fafafa;
+  border: 10px solid orange;
+  color: #333;
+  font: 16px/1.5 Georgia, sans-serif;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.grid--full {
+  height: calc(100vh - (2 * 10px));
+}
+
+.grid > li {
+  padding: 1em;
+}
+
+.grid > li p {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .grid > li p {
+    display: block;
+  }
+}
+
+.grid .double-h {
+  grid-row: span 2;
+}
+
+.grid .double-w {
+  grid-column: span 2;
+}
+
+.grid--stats .digits {
+  font-size: 3em;
+  font-weight: bold;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .grid--stats .digits {
+    display: inline;
+  }
+}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Les coopérateurs et coopératrices{% endblock %}
+
+{% block content %}
+<ul class="grid grid--full grid--stats">
+  <li class="double-h double-w">
+    <span class="digits">{{ data.total }}</span> membres actifs
+
+    <p>
+      {{ data.total_to_date }} depuis le tout début
+    </p>
+  </li>
+  <li>
+    <span class="digits">{{ data.state.unpayed + data.state.delay }}</span> à vérifier
+
+    <p>
+      {{ data.state.delay }} en délai •
+      {{ data.state.unpayed }} impayés
+    </p>
+  </li>
+  <li>
+    <span class="digits">{{ data.badge_to_print }}</span> badges à imprimer
+  </li>
+  <li>
+    <span class="digits">{{ data.in_ftop_team }}</span> volant·e·s
+  </li>
+  <li>
+    <span class="digits">{{ data.state.vacation }}</span> en congés
+  </li>
+  <li>
+    <span class="digits">{{ data.state.alert }}</span> en alerte
+
+    <p>
+      {{ data.negative_points[3][1] }} en dessous de {{ data.negative_points[3][0] }} points <br>
+      {{ data.negative_points[5][1] }} en dessous de {{ data.negative_points[5][0] }} points
+    </p>
+  </li>
+</ul>
+{% endblock %}
