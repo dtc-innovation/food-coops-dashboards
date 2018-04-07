@@ -4,15 +4,18 @@ body {
   margin: 0;
 }
 
+html {
+  font: 16px/1.5 Georgia, sans-serif;
+}
+
 body {
   background: #fafafa;
   border: 10px solid orange;
   color: #333;
-  font: 16px/1.5 Georgia, sans-serif;
 }
 
 @media (min-width: 768px) {
-  body {
+  html {
     font-size: 20px;
   }
 }
@@ -30,7 +33,7 @@ body {
 }
 
 .grid > li {
-  padding: 1em;
+  padding: 1rem;
 }
 
 .grid > li p {
@@ -49,6 +52,13 @@ body {
 
 .grid .double-w {
   grid-column: span 2;
+}
+
+.grid .double-w.double-h {
+  font-size: 1.5em;
+}
+.grid .double-w.double-h p {
+  font-size: 1rem;
 }
 
 .grid--stats .digits {

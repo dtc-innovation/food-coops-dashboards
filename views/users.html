@@ -3,12 +3,14 @@
 {% block title %}Les coopérateurs et coopératrices{% endblock %}
 
 {% block content %}
+{{ data.users.size }}
 <ul class="grid grid--full grid--stats">
   <li class="double-h double-w">
     <span class="digits">{{ data.total }}</span> membres actifs
 
     <p>
-      {{ data.total_to_date }} depuis le tout début
+      <!-- {{ data.total_to_date }} depuis le tout début<br> -->
+      {{ data.total_last_30d }} nouveaux sur les 30 derniers jours
     </p>
   </li>
   <li>
