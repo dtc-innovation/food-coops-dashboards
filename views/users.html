@@ -10,32 +10,38 @@
 
     <p>
       <!-- {{ data.total_to_date }} depuis le tout début<br> -->
-      {{ data.total_last_30d }} nouveaux sur les 30 derniers jours
+      <span class="digits">{{ data.state.vacation }}</span> en congés •
+      <span class="digits">{{ data.in_ftop_team }}</span> en créneau libre
+    </p>
+  </li>
+  <li class="links">
+    <a href="/planning">📋 Planning</a>
+  </li>
+  <li>
+    <span class="digits">{{ data.badge_to_print }}</span> badges à imprimer
+  </li>
+  <li>
+    <span class="digits">{{ data.users_last_30d | length }}</span> nouveaux (~30 jours)<br>
+
+    <p>
+      <span class="digits">{{ data.users_last_30d_alert }}</span> en alerte
+      (<span class="digits">{{ data.users_last_45d_alert }}</span> sur 45 jours)
     </p>
   </li>
   <li>
     <span class="digits">{{ data.state.unpayed + data.state.delay }}</span> à vérifier
 
     <p>
-      {{ data.state.delay }} en délai •
-      {{ data.state.unpayed }} impayés
+      <span class="digits">{{ data.state.delay }}</span> en délai •
+      <span class="digits">{{ data.state.unpayed }}</span> impayés
     </p>
-  </li>
-  <li>
-    <span class="digits">{{ data.badge_to_print }}</span> badges à imprimer
-  </li>
-  <li>
-    <span class="digits">{{ data.in_ftop_team }}</span> volant·e·s
-  </li>
-  <li>
-    <span class="digits">{{ data.state.vacation }}</span> en congés
   </li>
   <li>
     <span class="digits">{{ data.state.alert }}</span> en alerte
 
     <p>
-      {{ data.negative_points[3][1] }} en dessous de {{ data.negative_points[3][0] }} points <br>
-      {{ data.negative_points[5][1] }} en dessous de {{ data.negative_points[5][0] }} points
+      <span class="digits">{{ data.negative_points[3][1] }}</span> en dessous de {{ data.negative_points[3][0] }} points <br>
+      <span class="digits">{{ data.negative_points[5][1] }}</span> en dessous de {{ data.negative_points[5][0] }} points
     </p>
   </li>
 </ul>

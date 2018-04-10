@@ -3,5 +3,28 @@
 {% block title %}Planning des semaines{% endblock %}
 
 {% block content %}
-<pre>{{ data | dump(2) }}</pre>
+
+{% for day, venues in data %}
+<div class="day" id="{{ day }}">
+  <header>
+    <h1>{{ day | date.format('dddd DD MMMM', {locale: locale}) }}</h1>
+  </header>
+  {% for venue, schedules in venues %}
+  <table class="venue venue--{{ venue | lower }}" data-json="{{ schedules | dump(2) }}">
+    <caption>{{ venue }}</caption>
+    <tbody>
+      {% for datetime, planning in schedules %}
+      {% set resources = planning | first %}
+      <tr>
+        <th class="time">{{ datetime | date.format('HH:mm') }}</th>
+        <td class="time__infos">
+          {{ resources.seats_expected }} / {{ resources.seats_max }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endfor %}
+</div>
+{% endfor %}
 {% endblock %}

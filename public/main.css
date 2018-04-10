@@ -61,14 +61,52 @@ body {
   font-size: 1rem;
 }
 
+.grid > .links {
+	display: flex;
+	flex-direction: column;
+  text-align: center;
+}
+
+.grid > .links a {
+	display: inline-block;
+	background: #ccc;
+	padding: 1rem;
+	font-family: sans-serif;
+	text-decoration: none;
+}
+
 .grid--stats .digits {
-  font-size: 3em;
   font-weight: bold;
+}
+.grid--stats .digits--disabled {
+  color: #999;
+}
+
+.grid--stats > li > .digits {
+  font-size: 3em;
   display: block;
 }
 
 @media (min-width: 768px) {
-  .grid--stats .digits {
+  .grid--stats > li > .digits {
     display: inline;
   }
+}
+
+/* Planning View */
+.day {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.day header {
+  width: 100%;
+}
+  .day header h1 {
+    margin: 1rem;
+  }
+
+.day table {
+  flex-grow: 1;
+  width: 50%;
 }
