@@ -14,6 +14,8 @@
 
 **Intention** : voir où sont les urgences de présence.
 
+![](docs/dashboards/planning.png)
+
 ## Créneaux
 
 **Intention** : voir les créneaux qui gagneraient à accueillir davantage de participant·e·s.
