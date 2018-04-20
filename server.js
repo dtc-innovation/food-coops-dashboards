@@ -4,7 +4,12 @@ const express = require('express');
 const cons = require('consolidate');
 const nunjucks = require('nunjucks');
 const { join } = require('path');
+const env = require('require-env');
 const app = express();
+
+env.require('ODOO_USERNAME');
+env.require('ODOO_PASSWORD');
+env.require('ODOO_URL');
 
 const controllers = require('./lib/controllers');
 const installDateFns = require('./lib/nunjucks-date-fns');
