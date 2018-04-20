@@ -12,7 +12,8 @@ env.require('ODOO_PASSWORD');
 env.require('ODOO_URL');
 
 const controllers = require('./lib/controllers');
-const installDateFns = require('./lib/nunjucks-date-fns');
+const installDateFns = require('./lib/nunjucks/date-fns');
+const installHelpers = require('./lib/nunjucks/helpers');
 const isProduction = process.env.NODE_ENV === 'production';
 
 cons.requires.nunjucks = nunjucks.configure(join(__dirname, 'views'), {
@@ -20,6 +21,7 @@ cons.requires.nunjucks = nunjucks.configure(join(__dirname, 'views'), {
   watch: !isProduction,
 });
 installDateFns(cons.requires.nunjucks, { locale: 'fr' });
+installHelpers(cons.requires.nunjucks);
 
 app.engine('html', cons.nunjucks);
 app.set('view engine', 'html');

@@ -12,12 +12,24 @@ body {
   background: #fafafa;
   border: 10px solid orange;
   color: #333;
+  min-height: 100vh;
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 20px;
   }
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro h1 {
+  margin-bottom: 0;
+}
+.intro h1 + p {
+  margin-top: 0;
 }
 
 .grid {
@@ -94,9 +106,15 @@ body {
 }
 
 /* Planning View */
-.day {
+.day,
+.week {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.week caption {
+  font-size: 1.5em;
 }
 
 .day header {
@@ -106,7 +124,26 @@ body {
     margin: 1rem;
   }
 
-.day table {
-  flex-grow: 1;
-  width: 50%;
+.day table,
+.week table {
+  width: 48%;
+}
+
+td.digit {
+  font-family: monospace;
+  text-align: center;
+}
+.slots--na {
+  /* background: lightyellow; */
+}
+.slots--missing {
+  background: antiquewhite;
+}
+.slots--missing.heavy {
+  background: lightpink;
+  font-weight: bold;
+}
+.slots--full,
+.slots--overflow {
+  background: lightgreen;
 }

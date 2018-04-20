@@ -3,28 +3,41 @@
 {% block title %}Planning des semaines{% endblock %}
 
 {% block content %}
+<div class="intro">
+  <h1 class="title">Créneaux</h1>
 
-{% for day, venues in data %}
-<div class="day" id="{{ day }}">
-  <header>
-    <h1>{{ day | date.format('dddd DD MMMM', {locale: locale}) }}</h1>
-  </header>
-  {% for venue, schedules in venues %}
-  <table class="venue venue--{{ venue | lower }}" data-json="{{ schedules | dump(2) }}">
+  <p>Voir où sont les urgences de présence.</p>
+</div>
+
+<div class="week" id="current">
+{% for venue, shifts in data %}
+  <table class="venue venue--{{ venue | lower }}">
     <caption>{{ venue }}</caption>
-    <tbody>
-      {% for datetime, planning in schedules %}
-      {% set resources = planning | first %}
+    <thead>
       <tr>
-        <th class="time">{{ datetime | date.format('HH:mm') }}</th>
-        <td class="time__infos">
-          {{ resources.seats_expected }} / {{ resources.seats_max }}
+        <th></th>
+        {% for day in days %}
+        <th>{{ day | date.format('ddd DD') }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for shift in times %}
+      <tr>
+        <th>{{ shift }}</th>
+        {% for day in days %}
+        {% set resource = shifts[shift][day] | default([]) | first %}
+        {% set seats_diff = resource | resource_diff %}
+        <td class="digit {{ resource | resource_class }}">
+          {% if resource and (seats_diff !== 0) %}
+          {{ seats_diff }}
+          {% endif %}
         </td>
+        {% endfor %}
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  {% endfor %}
-</div>
 {% endfor %}
+</div>
 {% endblock %}
