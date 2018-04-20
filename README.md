@@ -20,6 +20,11 @@
 
 **Intention** : voir les créneaux qui gagneraient à accueillir davantage de participant·e·s.
 
+# Déploiement
+
+```bash
+$ npm run deploy
+```
 
 # Licence
 

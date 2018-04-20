@@ -4,6 +4,7 @@
   "description": "Des tableaux de bord pour supermarchés coopératifs afin d'y voir plus clair au jour le jour.",
   "main": "index.js",
   "scripts": {
+    "deploy": "now --public -e NODE_ENV=production -e ODOO_URL=https://odoo.lacagette-coop.fr/ -e ODOO_USERNAME=@odoo_username -e ODOO_PASSWORD=@odoo_password",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon server.js"
@@ -12,7 +13,8 @@
   "author": "Thomas Parisot (https://oncletom.io)",
   "license": "CC0-1.0",
   "devDependencies": {
-    "chokidar": "^2.0.3"
+    "chokidar": "^2.0.3",
+    "now": "^11.1.7"
   },
   "engines": {
     "node": ">=8.0.0"
