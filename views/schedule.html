@@ -17,7 +17,7 @@
       <tr>
         <th></th>
         {% for day in days %}
-        <th>{{ day | date.format('ddd DD') }}</th>
+        <th>{{ day | date.format('ddd DD', {locale: locale}) }}</th>
         {% endfor %}
       </tr>
     </thead>
