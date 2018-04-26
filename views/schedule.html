@@ -16,13 +16,13 @@
     <thead>
       <tr>
         <th></th>
-        {% for day in days %}
+        {% for day in days | sort %}
         <th>{{ day | date.format('ddd DD', {locale: locale}) }}</th>
         {% endfor %}
       </tr>
     </thead>
     <tbody>
-      {% for shift in times %}
+      {% for shift in times | sort %}
       <tr>
         <th>{{ shift }}</th>
         {% for day in days %}
