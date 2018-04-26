@@ -4,7 +4,7 @@
   "description": "Des tableaux de bord pour supermarchés coopératifs afin d'y voir plus clair au jour le jour.",
   "main": "index.js",
   "scripts": {
-    "deploy": "now --public -e NODE_ENV=production -e ODOO_URL=https://odoo.lacagette-coop.fr/ -e ODOO_USERNAME=@odoo_username -e ODOO_PASSWORD=@odoo_password",
+    "deploy": "now --public -e FIRST_WEEK='2015-12-28' -e NODE_ENV=production -e ODOO_URL=https://odoo.lacagette-coop.fr/ -e ODOO_USERNAME=@odoo_username -e ODOO_PASSWORD=@odoo_password",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon server.js"
