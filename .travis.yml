@@ -1,0 +1,11 @@
+language: node_js
+node_js: "node"
+cache: npm
+
+script: exit 0
+
+deploy:
+  provider: script
+  script: npm run deploy -- --token $NOW_TOKEN
+  on:
+    tags: true
