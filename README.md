@@ -1,4 +1,4 @@
-# `food-coops-dashboards`
+# `food-coops-dashboards` [![Build Status](https://travis-ci.org/dtc-innovation/food-coops-dashboards.svg?branch=master)](https://travis-ci.org/dtc-innovation/food-coops-dashboards)
 
 > Des tableaux de bord pour supermarchés coopératifs afin d'y voir plus clair au jour le jour.
 

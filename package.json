@@ -7,13 +7,22 @@
     "deploy": "now --team dtc-innovation --public -e FIRST_WEEK='2015-12-28' -e NODE_ENV=production -e ODOO_URL=@odoo_url -e ODOO_USERNAME=@odoo_username -e ODOO_PASSWORD=@odoo_password",
     "start": "node server.js",
     "test": "exit 0",
+    "posttest": "eslint '**/*.js'",
     "watch": "nodemon server.js"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dtc-innovation/food-coops-dashboards"
+  },
+  "bugs": {
+    "url": "https://github.com/dtc-innovation/food-coops-dashboards/issues"
+  },
   "author": "Thomas Parisot (https://oncletom.io)",
   "license": "CC0-1.0",
   "devDependencies": {
     "chokidar": "^2.0.3",
+    "eslint": "^4.19.1",
     "now": "^11.1.7"
   },
   "engines": {
