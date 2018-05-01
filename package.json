@@ -6,7 +6,7 @@
   "scripts": {
     "deploy": "now --team dtc-innovation --public -e FIRST_WEEK='2015-12-28' -e NODE_ENV=production -e ODOO_URL=@odoo_url -e ODOO_USERNAME=@odoo_username -e ODOO_PASSWORD=@odoo_password",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "exit 0",
     "watch": "nodemon server.js"
   },
   "keywords": [],
