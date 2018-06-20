@@ -1,6 +1,6 @@
 {
   "name": "food-coops-dashboards",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Des tableaux de bord pour supermarchés coopératifs afin d'y voir plus clair au jour le jour.",
   "main": "index.js",
   "scripts": {
